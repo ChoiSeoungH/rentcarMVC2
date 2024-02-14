@@ -18,8 +18,8 @@
 <web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
-                      https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
-  version="6.0">
+                      https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+  version="5.0">
 
   <!-- ======================== Introduction ============================== -->
   <!-- This document defines default values for *all* web applications      -->
@@ -78,7 +78,7 @@
   <!--                       contents. [null]                               -->
   <!--                                                                      -->
   <!--   sendfileSize        If the connector used supports sendfile, this  -->
-  <!--                       represents the minimal file size in KiB for     -->
+  <!--                       represents the minimal file size in KB for     -->
   <!--                       which sendfile will be used. Use a negative    -->
   <!--                       value to always disable sendfile.  [48]        -->
   <!--                                                                      -->
@@ -155,9 +155,9 @@
   <!--                       pages.  See the jasper documentation for more  -->
   <!--                       information.                                   -->
   <!--                                                                      -->
-  <!--   compilerSourceVM    Compiler source VM. [11]                      -->
+  <!--   compilerSourceVM    Compiler source VM. [1.8]                      -->
   <!--                                                                      -->
-  <!--   compilerTargetVM    Compiler target VM. [11]                      -->
+  <!--   compilerTargetVM    Compiler target VM. [1.8]                      -->
   <!--                                                                      -->
   <!--   development         Is Jasper used in development mode? If true,   -->
   <!--                       the frequency at which JSPs are checked for    -->
@@ -196,6 +196,11 @@
   <!--                       Should text strings be generated as char       -->
   <!--                       arrays, to improve performance in some cases?  -->
   <!--                       [false]                                        -->
+  <!--                                                                      -->
+  <!--   ieClassId           Deprecated. Will be removed in Tomcat 10.1     -->
+  <!--                       The class-id value to be sent to Internet      -->
+  <!--                       Explorer when using <jsp:plugin> tags.         -->
+  <!--                       [clsid:8AD9C840-044E-11D1-B3E9-00805F499D93]   -->
   <!--                                                                      -->
   <!--   javaEncoding        Java file encoding to use for generating java  -->
   <!--                       source files. [UTF8]                           -->
@@ -363,7 +368,7 @@
   <!--                        the arguments to the OS. See the CGI How-To   -->
   <!--                        for more details. The default varies by       -->
   <!--                        platform.                                     -->
-  <!--                        Windows: [[\w\Q-.\\/:\E]+]            -->
+  <!--                        Windows: [[a-zA-Z0-9\Q-_.\\/:\E]+]            -->
   <!--                        Others:  [.*]                                 -->
   <!--                        Note that internally the CGI Servlet treats   -->
   <!--                        [.*] as a special case to improve performance -->
@@ -374,7 +379,7 @@
   <!--                        command line arguments must match else the    -->
   <!--                        request will be rejected. The default matches -->
   <!--                        the allowed values defined by RFC3875.        -->
-  <!--                        [[\w\Q%;/?:@&,$-.!~*'()\E]+]          -->
+  <!--                        [[a-zA-Z0-9\Q%;/?:@&,$-_.!~*'()\E]+]          -->
   <!--                                                                      -->
   <!--   enableCmdLineArguments                                             -->
   <!--                        Are command line parameters generated from    -->
@@ -1771,10 +1776,6 @@
         <mime-type>application/vnd.geogebra.file</mime-type>
     </mime-mapping>
     <mime-mapping>
-        <extension>ggs</extension>
-        <mime-type>application/vnd.geogebra.slides</mime-type>
-    </mime-mapping>
-    <mime-mapping>
         <extension>ggt</extension>
         <mime-type>application/vnd.geogebra.tool</mime-type>
     </mime-mapping>
@@ -2128,7 +2129,7 @@
     </mime-mapping>
     <mime-mapping>
         <extension>js</extension>
-        <mime-type>text/javascript</mime-type>
+        <mime-type>application/javascript</mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>jsf</extension>
@@ -2477,10 +2478,6 @@
     <mime-mapping>
         <extension>mjp2</extension>
         <mime-type>video/mj2</mime-type>
-    </mime-mapping>
-    <mime-mapping>
-        <extension>mjs</extension>
-        <mime-type>text/javascript</mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>mk3d</extension>
@@ -2919,10 +2916,6 @@
     <mime-mapping>
         <extension>oprc</extension>
         <mime-type>application/vnd.palm</mime-type>
-    </mime-mapping>
-    <mime-mapping>
-        <extension>opus</extension>
-        <mime-type>audio/ogg</mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>org</extension>

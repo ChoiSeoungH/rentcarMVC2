@@ -21,7 +21,7 @@
 	
 	<div align="center">
 	
-	
+
 	<table>
 		<tr height="60">
 		<td align="center" colspan="3">

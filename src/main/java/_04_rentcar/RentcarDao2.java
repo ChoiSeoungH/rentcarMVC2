@@ -1,5 +1,9 @@
 package _04_rentcar;
 
+import _04_rentcar.CarReserveVO;
+import _04_rentcar.CarViewVO;
+import _04_rentcar.RentcarVO;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -8,13 +12,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 
-public class RentcarDao {
-	private RentcarDao() {
+public class RentcarDao2 {
+	private RentcarDao2() {
 	}
 
-	private static RentcarDao dao = new RentcarDao();
+	private static RentcarDao2 dao = new RentcarDao2();
 
-	public static RentcarDao getInstance() {
+	public static RentcarDao2 getInstance() {
 		return dao;
 	}
 

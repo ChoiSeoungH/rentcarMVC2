@@ -1,3 +1,5 @@
 
-X
-java:S2094"BRemove this empty class, write its code or make it an "interface".(‚£ÉÙ
+^
+java:S1854"ARemove this useless assignment to local variable "cartegoryList".(‰•‹Õ8ÜÑÅ·Ú1
+O
+java:S1128"2Remove this unused import '_04_rentcar.RentcarVO'.(Å¦³ƒ8‹¶Ç·Ú1
