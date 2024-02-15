@@ -18,7 +18,7 @@ public class UserReserveListController implements Controller {
     RentcarDao rdao = RentcarDao.getInstance();
     ArrayList<joinCarView> reserveList = rdao.getAllReserve((String) session.getAttribute("id"));
     request.setAttribute("reserveList",reserveList);
-    String center = request.getParameter("center");
+    String center = "rentcar/userReserveList.jsp";
     request.setAttribute("center", center);
     return "main";
   }

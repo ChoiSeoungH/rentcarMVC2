@@ -1,9 +1,7 @@
 package com.basic.rentcar.fronController;
 
 import com.basic.rentcar.controller.rentcar.*;
-import com.basic.rentcar.controller.user.LoginCheckController;
-import com.basic.rentcar.controller.user.LogoutCheckController;
-import com.basic.rentcar.controller.user.MainController;
+import com.basic.rentcar.controller.user.*;
 
 import java.util.HashMap;
 
@@ -15,6 +13,10 @@ public class HandlerMapping {
     mappings.put("/main.do", new MainController());
     mappings.put("/loginCheck.do", new LoginCheckController());
     mappings.put("/logoutCheck.do", new LogoutCheckController());
+    mappings.put("/joinUser.do", new JoinUserController());
+    mappings.put("/updateUser.do", new UpdateUserController());
+    mappings.put("/deleteUser.do", new DeleteUserController());
+    mappings.put("/userInfo.do", new UserInfoController());
     mappings.put("/carMain.do", new CarMainController());
     mappings.put("/carInfo.do", new CarInfoController());
     mappings.put("/carList.do", new CarListController());

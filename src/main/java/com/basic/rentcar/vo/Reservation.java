@@ -1,5 +1,12 @@
 package com.basic.rentcar.vo;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.ToString;
+
+@Data
+@AllArgsConstructor
+@ToString
 public class Reservation {
 	private int reserveSeq;	
 	private int no;				
@@ -12,72 +19,6 @@ public class Reservation {
 	private int usenavi;
 	private int useseat;
 
-	public int getReserveSeq() {
-		return reserveSeq;
+	public Reservation() {
 	}
-	public void setReserveSeq(int reserveSeq) {
-		this.reserveSeq = reserveSeq;
-	}
-	public int getNo() {
-		return no;
-	}
-	public void setNo(int no) {
-		this.no = no;
-	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public int getQty() {
-		return qty;
-	}
-	public void setQty(int qty) {
-		this.qty = qty;
-	}
-	public int getDday() {
-		return dday;
-	}
-	public void setDday(int dday) {
-		this.dday = dday;
-	}
-	public String getRday() {
-		return rday;
-	}
-	public void setRday(String rday) {
-		this.rday = rday;
-	}
-	public int getUsein() {
-		return usein;
-	}
-	public void setUsein(int usein) {
-		this.usein = usein;
-	}
-	public int getUsewifi() {
-		return usewifi;
-	}
-	public void setUsewifi(int usewifi) {
-		this.usewifi = usewifi;
-	}
-	public int getUseseat() {
-		return useseat;
-	}
-	public void setUseseat(int useseat) {
-		this.useseat = useseat;
-	}
-	public int getUsenavi() {
-		return usenavi;
-	}
-	public void setUsenavi(int usenavi) {
-		this.usenavi = usenavi;
-	}
-	@Override
-	public String toString() {
-		return "Reservation [reserveSeq=" + reserveSeq + ", no=" + no + ", id=" + id + ", qty=" + qty + ", dday="
-				+ dday + ", rday=" + rday + ", usein=" + usein + ", usewifi=" + usewifi + ", usenavi=" + usenavi
-				+ ", useseat=" + useseat + "]";
-	}
-	
-	
 }

@@ -19,8 +19,6 @@ public class DeleteResController implements Controller {
     // 예약삭제 메소드 호출
     rdao.carRemoveReserve(resSeq,qty,no);
     String ctx = request.getContextPath();
-    String center = request.getParameter("center");
-    request.setAttribute("center", center);
-    return "redirect:"+ctx+"/main.do";
+    return "redirect:"+ctx+"/userReserveList.do";
   }
 }

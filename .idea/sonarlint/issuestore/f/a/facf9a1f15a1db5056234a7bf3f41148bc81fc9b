@@ -1,40 +1,35 @@
 
 {
-java:S2293E"YReplace the type specification in this constructor call with the diamond operator ("<>").(œÆ´ şÿÿÿÿ8êÛ“¬Ú1
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(œÆ´ şÿÿÿÿ8êÛ“¬Ú1
 h
-java:S1192W"FDefine a constant instead of duplicating this literal "price" 5 times.(ÅõÂ™ıÿÿÿÿ8ëÛ“¬Ú1
+java:S1192/"FDefine a constant instead of duplicating this literal "price" 5 times.(ÅõÂ™ıÿÿÿÿ8ëÛ“¬Ú1
 e
-java:S1192Z"HDefine a constant instead of duplicating this literal "company" 4 times.(²Ô›®8ëÛ“¬Ú1
+java:S11922"HDefine a constant instead of duplicating this literal "company" 4 times.(²Ô›®8ëÛ“¬Ú1
 l
-java:S1192Y"JDefine a constant instead of duplicating this literal "total_qty" 5 times.(Í˜Û›üÿÿÿÿ8ëÛ“¬Ú1
+java:S11921"JDefine a constant instead of duplicating this literal "total_qty" 5 times.(Í˜Û›üÿÿÿÿ8ëÛ“¬Ú1
 l
-java:S1192X"JDefine a constant instead of duplicating this literal "usepeople" 4 times.(—Ğ¸Ëøÿÿÿÿ8ëÛ“¬Ú1
+java:S11920"JDefine a constant instead of duplicating this literal "usepeople" 4 times.(—Ğ¸Ëøÿÿÿÿ8ëÛ“¬Ú1
 f
-java:S1192V"IDefine a constant instead of duplicating this literal "category" 4 times.(÷Ü§´8ëÛ“¬Ú1
+java:S1192."IDefine a constant instead of duplicating this literal "category" 4 times.(÷Ü§´8ëÛ“¬Ú1
 ’
-java:S1319C"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ëÛ³»ùÿÿÿÿ8Ä–“¬Ú1
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ëÛ³»ùÿÿÿÿ8Ä–“¬Ú1
 “
-java:S1319Æ"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ƒù¯øÿÿÿÿ8Å–“¬Ú1
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ƒù¯øÿÿÿÿ8¯‡ôÒÚ1
 
-java:S1319ë"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(úáà8Å–“¬Ú1
+java:S1319Ã"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(úáà8¯‡ôÒÚ1
 
-java:S1319’"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(±˜‰ü8ìÛ“¬Ú1
+java:S1319ê"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(±˜‰ü8¯‡ôÒÚ1
 ¶
-java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(‡½ƒ8¶Ü“¬Ú1
-X
-java:S6437"6Revoke and change this password, as it is compromised.(í–Œíùÿÿÿÿ8¹Ü“¬Ú1
-L	java:S106("+Replace this use of System.out by a logger.(ÔÄÔ‚úÿÿÿÿ8¦—“¬Ú1
-X	java:S125L"<This block of commented-out lines of code should be removed.(üÎ“˜8¼Ü“¬Ú1
-G	java:S106{"+Replace this use of System.out by a logger.(°ãÛ8§—“¬Ú1
-G	java:S106|"+Replace this use of System.out by a logger.(ò³ÜÜ8­—“¬Ú1
-K
-java:S1481“"(Remove this unused "num" local variable.(†¬›Äûÿÿÿÿ8¤—“¬Ú1
-M	java:S106¦"+Replace this use of System.out by a logger.(íéÇ¢üÿÿÿÿ8¯—“¬Ú1
-H	java:S106¾"+Replace this use of System.out by a logger.(æ¯µÉ8°—“¬Ú1
-Y	java:S125›"<This block of commented-out lines of code should be removed.(ÁÏÿó8­—“¬Ú1
-H	java:S106Ÿ"+Replace this use of System.out by a logger.(İŠ–é8±—“¬Ú1
-M	java:S106³"+Replace this use of System.out by a logger.(Ö¦û–ÿÿÿÿÿ8ÍÜ“¬Ú1
-M	java:S106È"+Replace this use of System.out by a logger.(ĞéÚ¢üÿÿÿÿ8ÏÜ“¬Ú1
-M	java:S106ß"+Replace this use of System.out by a logger.(–¤¥âøÿÿÿÿ8ĞÜ“¬Ú1
-F	java:S108ì")Either remove or fill this block of code.(É®£8áÈ•¨Ú1
-F	java:S108ò")Either remove or fill this block of code.(É®£8âÈ•¨Ú1
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(‡½ƒ8¶Ü“¬Ú1
+X	java:S125$"<This block of commented-out lines of code should be removed.(üÎ“˜8¼Ü“¬Ú1
+G	java:S106S"+Replace this use of System.out by a logger.(°ãÛ8Ã‡ôÒÚ1
+G	java:S106T"+Replace this use of System.out by a logger.(ò³ÜÜ8Ä‡ôÒÚ1
+J
+java:S1481k"(Remove this unused "num" local variable.(†¬›Äûÿÿÿÿ8È‡ôÒÚ1
+L	java:S106~"+Replace this use of System.out by a logger.(íéÇ¢üÿÿÿÿ8Ê‡ôÒÚ1
+H	java:S106–"+Replace this use of System.out by a logger.(æ¯µÉ8Ë‡ôÒÚ1
+Y	java:S125ó"<This block of commented-out lines of code should be removed.(ÁÏÿó8Ó‡ôÒÚ1
+H	java:S106÷"+Replace this use of System.out by a logger.(İŠ–é8Ó‡ôÒÚ1
+M	java:S106‹"+Replace this use of System.out by a logger.(Ö¦û–ÿÿÿÿÿ8Ö‡ôÒÚ1
+M	java:S106 "+Replace this use of System.out by a logger.(ĞéÚ¢üÿÿÿÿ8Ø‡ôÒÚ1
+M	java:S106·"+Replace this use of System.out by a logger.(–¤¥âøÿÿÿÿ8Ù‡ôÒÚ1

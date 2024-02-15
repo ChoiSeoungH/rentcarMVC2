@@ -8,6 +8,9 @@ import com.basic.rentcar.vo.Reservation;
 import java.sql.*;
 import java.util.ArrayList;
 
+import static com.basic.rentcar.util.MyBatisConfig.dbclose;
+import static com.basic.rentcar.util.MyBatisConfig.getConnection;
+
 public class RentcarDao {
   private RentcarDao() {
   }
@@ -21,49 +24,6 @@ public class RentcarDao {
   Connection conn = null;
   PreparedStatement pstmt = null;
   ResultSet rs = null;
-
-  public Connection getConnection() {
-    String dbURL = "jdbc:mysql://localhost:3306/rentcardb01?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true";
-    String dbID = "root";
-    String dbPassword = "1234";
-    try {
-      Class.forName("com.mysql.cj.jdbc.Driver");
-      conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-    return conn;
-  }
-
-  public int getMember(String id, String pw) {
-
-    System.out.println("id= " + id + " pw=" + pw);
-    int result = 0;
-
-    conn = getConnection();
-    try {
-
-      String sql = "SELECT * FROM member WHERE id=? and pw=?";
-      pstmt = conn.prepareStatement(sql);
-
-      pstmt.setString(1, id);
-      pstmt.setString(2, pw);
-
-      rs = pstmt.executeQuery();
-
-      if (rs.next()) {
-        result = 1;
-      }
-
-    } catch (Exception e) {
-      e.printStackTrace();
-    } finally {
-      dbclose();
-    }
-    return result;
-  }
-
-
   public ArrayList<Rentcar> getSelectCar() {
 
     ArrayList<Rentcar> v = new ArrayList<Rentcar>();
@@ -100,7 +60,7 @@ public class RentcarDao {
     } catch (Exception e) {
       e.printStackTrace();
     } finally {
-      dbclose();
+      dbclose(conn,pstmt,rs);
     }
 
     return v;
@@ -135,7 +95,7 @@ public class RentcarDao {
     } catch (Exception e) {
       e.printStackTrace();
     } finally {
-      dbclose();
+      dbclose(conn,pstmt,rs);
     }
     return bean;
   }
@@ -171,7 +131,7 @@ public class RentcarDao {
     } catch (Exception e) {
       e.printStackTrace();
     } finally {
-      dbclose();
+      dbclose(conn,pstmt,rs);
     }
   }
 
@@ -192,7 +152,7 @@ public class RentcarDao {
     } catch (Exception e) {
       e.printStackTrace();
     } finally {
-      dbclose();
+      dbclose(conn,pstmt,rs);
     }
   }
   public ArrayList<Rentcar> getAllCar() {
@@ -225,7 +185,7 @@ public class RentcarDao {
     } catch (Exception e) {
       e.printStackTrace();
     } finally {
-      dbclose();
+      dbclose(conn,pstmt,rs);
     }
     return v;
 
@@ -265,7 +225,7 @@ public class RentcarDao {
     } catch (Exception e) {
       e.printStackTrace();
     } finally {
-      dbclose();
+      dbclose(conn,pstmt,rs);
     }
     return v;
   }
@@ -309,7 +269,7 @@ public class RentcarDao {
     } catch (Exception e) {
       e.printStackTrace();
     } finally {
-      dbclose();
+      dbclose(conn,pstmt,rs);
     }
 
     return v;
@@ -330,7 +290,7 @@ public class RentcarDao {
     } catch (Exception e) {
       e.printStackTrace();
     } finally {
-      dbclose();
+      dbclose(conn,pstmt,rs);
     }
   }
 
@@ -353,23 +313,10 @@ public class RentcarDao {
     } catch (Exception e) {
       e.printStackTrace();
     } finally {
-      dbclose();
+      dbclose(conn,pstmt,rs);
     }
   }
 
-  public void dbclose() {
-    if (conn != null) {
-      try {
-        conn.close();
-      } catch (SQLException e) {
-      }
-    }
-    if (pstmt != null) {
-      try {
-        pstmt.close();
-      } catch (SQLException e) {
-      }
-    }
-  }
+
 
 }

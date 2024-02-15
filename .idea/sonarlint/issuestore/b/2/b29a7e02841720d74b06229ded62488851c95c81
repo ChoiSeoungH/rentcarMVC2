@@ -1,0 +1,17 @@
+
+r	java:S1178"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ñ‡Óûÿÿÿÿ8óğÄÓÚ1
+r	java:S117Q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—ı¼Ğûÿÿÿÿ8ÄØüÔÚ1
+m	java:S117n"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Í•·¦8İåéÖÚ1
+s	java:S117„"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±€ùæúÿÿÿÿ8ÎŞ€ØÚ1
+s	java:S117”"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦–îåùÿÿÿÿ8Ñ²ùÙÚ1
+n	java:S117¤"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊÇè8­óûÙÚ1
+»
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(Ìáúÿÿÿÿ8‚ÕøÒÚ1
+L	java:S106"+Replace this use of System.out by a logger.(ÔÄÔ‚úÿÿÿÿ8®ûõÒÚ1
+o	java:S1007"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ï–ùÿÿÿÿ8’ûÁÓÚ1
+L	java:S106:"+Replace this use of System.out by a logger.(™úŒÿøÿÿÿÿ8ö¡ÔÚ1
+G	java:S106G"+Replace this use of System.out by a logger.(®õã‚8Ï°ÔÚ1
+X
+java:S1117Y"6Rename "no" which hides the field declared at line 26.(•ĞÀ–ÿÿÿÿÿ8ùæÎÕÚ1
+N
+java:S1128"1Remove this unused import '_04_rentcar.MemberVO'.(Ÿ‰ĞŸ8—¾úÙÚ1

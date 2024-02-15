@@ -60,7 +60,7 @@
     <input type="submit" value="검색" />&nbsp;&nbsp;
   </form>
   <%-- button은 form 밖에 위치시키기 --%>
-  <button onclick="location.href='01_carMain.jsp?center=09_carAllList.jsp'">전체 검색</button>
+  <button onclick="location.href='main.do?center=carList.do'">전체 검색</button>
 
 
 </div>

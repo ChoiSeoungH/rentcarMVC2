@@ -1268,3 +1268,16 @@
 0:0:0:0:0:0:0:1 - - [14/Feb/2024:18:30:11 +0900] "GET /main.do HTTP/1.1" 200 2610
 0:0:0:0:0:0:0:1 - - [14/Feb/2024:18:30:12 +0900] "GET /carMain.do?center=rentcar/carMain.jsp HTTP/1.1" 200 4101
 0:0:0:0:0:0:0:1 - - [14/Feb/2024:18:30:13 +0900] "GET /carList.do?center=rentcar/rentCarList.jsp&category=0 HTTP/1.1" 200 8960
+0:0:0:0:0:0:0:1 - - [14/Feb/2024:18:38:38 +0900] "GET /carMain.do?center=rentcar/carMain.jsp HTTP/1.1" 200 4101
+0:0:0:0:0:0:0:1 - - [14/Feb/2024:18:38:42 +0900] "POST /carList.do?center=rentcar/rentCarList.jsp HTTP/1.1" 200 4143
+0:0:0:0:0:0:0:1 - - [14/Feb/2024:18:38:43 +0900] "GET /carMain.do?center=rentcar/carMain.jsp HTTP/1.1" 200 4101
+0:0:0:0:0:0:0:1 - - [14/Feb/2024:18:38:44 +0900] "GET /carList.do?center=rentcar/rentCarList.jsp&category=0 HTTP/1.1" 200 8960
+0:0:0:0:0:0:0:1 - - [14/Feb/2024:18:38:47 +0900] "GET /carMain.do?center=rentcar/carMain.jsp HTTP/1.1" 200 4101
+0:0:0:0:0:0:0:1 - - [14/Feb/2024:18:39:28 +0900] "GET /userReserveList.do?center=rentcar/userReserveList.jsp HTTP/1.1" 200 3602
+0:0:0:0:0:0:0:1 - - [14/Feb/2024:18:39:30 +0900] "GET /main.do?center=user/login.jsp HTTP/1.1" 200 4219
+0:0:0:0:0:0:0:1 - - [14/Feb/2024:18:39:31 +0900] "GET /carMain.do?center=rentcar/carMain.jsp HTTP/1.1" 200 4101
+0:0:0:0:0:0:0:1 - - [14/Feb/2024:18:39:42 +0900] "GET /carList.do?center=rentcar/rentCarList.jsp&category=0 HTTP/1.1" 200 8960
+0:0:0:0:0:0:0:1 - - [14/Feb/2024:18:43:42 +0900] "GET /carMain.do?center=rentcar/carMain.jsp HTTP/1.1" 200 4101
+0:0:0:0:0:0:0:1 - - [14/Feb/2024:18:43:42 +0900] "GET /img/16.jpg HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [14/Feb/2024:18:43:44 +0900] "POST /carList.do?center=rentcar/rentCarList.jsp HTTP/1.1" 200 6205
+0:0:0:0:0:0:0:1 - - [14/Feb/2024:18:43:47 +0900] "GET /carList.do?center=rentcar/rentCarList.jsp&category=0 HTTP/1.1" 200 8960

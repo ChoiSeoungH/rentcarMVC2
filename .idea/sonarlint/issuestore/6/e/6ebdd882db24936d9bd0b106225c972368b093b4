@@ -1,3 +1,5 @@
 
-d
-java:S2094"BRemove this empty class, write its code or make it an "interface".(òê¼—úÿÿÿÿ8ŸÏÓìÙ1
+»
+java:S6548
+"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(òê¼—úÿÿÿÿ8‚ÕøÒÚ1
+L	java:S106"+Replace this use of System.out by a logger.(ÔÄÔ‚úÿÿÿÿ8®ûõÒÚ1

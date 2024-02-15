@@ -1,6 +1,6 @@
 package com.basic.rentcar.controller.user;
 
-import com.basic.rentcar.dao.RentcarDao;
+import com.basic.rentcar.dao.UserDao;
 import com.basic.rentcar.fronController.Controller;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -16,7 +16,7 @@ public class LoginCheckController implements Controller {
 
     String id = request.getParameter("id");
     String pw = request.getParameter("pw");
-    int check = RentcarDao.getInstance().getMember(id, pw);
+    int check = UserDao.getInstance().getMember(id, pw);
     System.out.println(check);
     if (check!=0) {
       HttpSession session = request.getSession();

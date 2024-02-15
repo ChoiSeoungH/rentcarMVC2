@@ -24,12 +24,16 @@
       </a>
     </td>
     <td align="center" width="200">
-      ${id}님
+
       <c:choose>
         <c:when test="${id eq 'GUEST'}">
+          ${id}님
           <button onclick="location.href='main.do?center=user/login.jsp'">로그인</button>
+          <button onclick="location.href='main.do?center=user/join.jsp'">회원가입</button>
         </c:when>
         <c:otherwise>
+          <a href="userInfo.do?center=user/userInfo.jsp"
+             style="text-decoration: none">${id}님</a></font>
           <button onclick="location.href='logoutCheck.do'">로그아웃</button>
         </c:otherwise>
       </c:choose>
