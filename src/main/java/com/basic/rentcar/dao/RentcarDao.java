@@ -231,92 +231,50 @@ public class RentcarDao {
   }
 
 
-  public ArrayList<joinCarView> getAllReserve(String id) {
-
-    ArrayList<joinCarView> v = new ArrayList<>();
-    joinCarView bean = null;
-
-    conn = getConnection();
-
-    try {
-
-      //select * from rentcar a2 ,carreserve a1  where a1.id = 'qwer' and curdate() < date_format(a1.rday , '%y-%m-%d') and a1.no = a2.no;
-      // select * from rentcar a2 ,carreserve a1  where a1.id = 'qwer' and a1.no = a2.no;
-
-      String sql = "select * from rentcar a2 ,carreserve a1  where a1.id = ? and a1.no = a2.no";
-      System.out.println("id:"+id);
-      pstmt = conn.prepareStatement(sql);
-      pstmt.setString(1, id);
-      rs = pstmt.executeQuery();
-
-      while (rs.next()) {
-        bean = new joinCarView();
-        bean.setNo(rs.getInt("no"));
-        bean.setReserveSeq(rs.getInt("reserve_seq"));
-        bean.setName(rs.getString("name"));
-        bean.setPrice(rs.getInt("price"));
-        bean.setImg(rs.getString("img"));
-        bean.setQty(rs.getInt("qty"));
-        bean.setDday(rs.getInt("dday"));
-        bean.setRday(rs.getString("rday"));
-        bean.setUsein(rs.getInt("usein"));
-        bean.setUsewifi(rs.getInt("usewifi"));
-        bean.setUsenavi(rs.getInt("usenavi"));
-        bean.setUseseat(rs.getInt("useseat"));
-        v.add(bean);
-        System.out.println(bean);
-      }
-    } catch (Exception e) {
-      e.printStackTrace();
-    } finally {
-      dbclose(conn,pstmt,rs);
-    }
-
-    return v;
-  }
-
-
-  public void carRemoveReserve(int reserveSeq ,int qty , int no) {
-
-    conn = getConnection();
-    try {
-      String sql = "DELETE FROM carreserve where reserve_seq = ?";
-      pstmt = conn.prepareStatement(sql);
-      pstmt.setInt(1, reserveSeq);
-      if(pstmt.executeUpdate()> 0 ) {
-        backRentcarQty(no, qty);
-        System.out.println("삭제 완료");
-      }
-    } catch (Exception e) {
-      e.printStackTrace();
-    } finally {
-      dbclose(conn,pstmt,rs);
-    }
-  }
-
   // 삭제하면 다시 토탈 car 다시 업데이트 되야함
 
-  private void backRentcarQty(int no , int rentQty) {
+
+
+  public int insertCar(Rentcar vo) {
+    String SQL="insert into rentcar(name, category, price, usepeople, total_qty,company, img,info) values(?,?,?,?,?,?,?,?)";
+    conn = getConnection();
+    System.out.println("vo : "+ vo);
+    int cnt=-1;
+    try {
+      pstmt=conn.prepareStatement(SQL);
+      pstmt.setString(1, vo.getName());
+      pstmt.setInt(2, vo.getCategory());
+      pstmt.setInt(3, vo.getPrice());
+      pstmt.setInt(4, vo.getUsepeople());
+      pstmt.setInt(5, vo.getTotalQty());
+      pstmt.setString(6, vo.getCompany());
+      pstmt.setString(7, vo.getImg());
+      pstmt.setString(8, vo.getInfo());
+      cnt=pstmt.executeUpdate();
+      System.out.println(cnt);
+    }catch (Exception e) {
+      e.printStackTrace();
+    }finally {
+      dbclose(conn,pstmt,rs);
+    }
+    return cnt;
+  }
+
+  public String getNextNo() {
     conn = getConnection();
 
     try {
-      String sql = "update rentcar set total_qty =total_qty + ? where no = ?";
+      String sql = "SELECT * FROM rentcar ORDER BY no DESC LIMIT 1";
       pstmt = conn.prepareStatement(sql);
-
-      pstmt.setInt(1, rentQty);
-      pstmt.setInt(2, no);
-
-      pstmt.executeUpdate();
-
-      System.out.println("rentQty= " + rentQty);
-
+      rs = pstmt.executeQuery();
+      if (rs.next()) {
+        return rs.getInt("no")+1+"";
+      }
     } catch (Exception e) {
       e.printStackTrace();
     } finally {
       dbclose(conn,pstmt,rs);
     }
+    return "";
   }
-
-
-
 }

@@ -5,6 +5,7 @@ import com.basic.rentcar.fronController.Controller;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.Valid;
 
 import java.io.IOException;
 
@@ -17,9 +18,11 @@ public class ValidateIdController implements Controller {
     System.out.println(request.getParameter("pw"));
     String passData;
     if (pw==null) {
-      passData = UserDao.getInstance().isValidId(id)? "notValid" : "valid";
+      passData = UserDao.getInstance().isValidId(id)?   "notValid":"valid";
+      System.out.println(passData);
     }else{
-      passData = UserDao.getInstance().isValidId(id,pw)? "notValid" : "valid";
+      passData = UserDao.getInstance().isValidId(id,pw)? "valid":"notValid";
+      System.out.println(passData);
     }
 
     response.getWriter().print(passData);

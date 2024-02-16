@@ -1,0 +1,7 @@
+
+L	java:S106"+Replace this use of System.out by a logger.(Ú¡Úëþÿÿÿÿ8ž©Û‰Û1
+C	java:S131""Add a default case to this switch.(ôÌí™ýÿÿÿÿ8€ãÔ‰Û1
+W
+java:S1128":Remove this unused import 'com.basic.rentcar.dao.UserDao'.(¶¤œˆ8ó½Ö‰Û1
+S
+java:S1128"6Remove this unused import 'com.basic.rentcar.vo.User'.(à¨èƒ8ó½Ö‰Û1

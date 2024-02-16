@@ -17,7 +17,7 @@
 </c:choose>
 
 <div align="center">
-  <form action="selectCarOption.do?center=rentcar/carOption.jsp" method="post">
+  <form action="selectCarOption.do" method="post">
     <table>
       <tr height="100">
         <td align="center" colspan="3">

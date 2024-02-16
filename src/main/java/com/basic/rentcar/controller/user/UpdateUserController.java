@@ -1,6 +1,5 @@
 package com.basic.rentcar.controller.user;
 
-import _04_rentcar.MemberVO;
 import com.basic.rentcar.dao.UserDao;
 import com.basic.rentcar.fronController.Controller;
 import com.basic.rentcar.vo.User;

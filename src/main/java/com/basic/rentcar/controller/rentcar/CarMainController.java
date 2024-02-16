@@ -19,7 +19,7 @@ public class CarMainController implements Controller {
     ArrayList<Rentcar> list = rdao.getSelectCar();
     HttpSession session = request.getSession();
     session.setAttribute("list", list);
-    String center = request.getParameter("center");
+    String center = "rentcar/carMain.jsp";
     request.setAttribute("center", center);
     return "main";
   }

@@ -83,7 +83,8 @@ public class ReservateCarController implements Controller {
     request.setAttribute("totalCar",totalCar);
     request.setAttribute("totalOption",totalOption);
     request.setAttribute("compare",compare);
-    String center = request.getParameter("center");
+
+    String center = "rentcar/reserveCarView.jsp";
     request.setAttribute("center", center);
     return "main";
   }

@@ -1,6 +1,5 @@
 package com.basic.rentcar.dao;
 
-import _04_rentcar.MemberVO;
 import com.basic.rentcar.vo.User;
 
 import java.sql.Connection;
@@ -145,7 +144,7 @@ public class UserDao {
   }
 
   public boolean isValidId(String id) {
-    String SQL="select pass from member where id=?";
+    String SQL="select * from member where id=?";
     conn = getConnection();
     try {
       pstmt=conn.prepareStatement(SQL);
@@ -161,7 +160,7 @@ public class UserDao {
   }
 
   public boolean isValidId(String id, String pw) {
-    String SQL="select pass from member where id=? AND pw=?";
+    String SQL="select * from member where id=? AND pw=?";
     conn = getConnection();
     try {
       pstmt=conn.prepareStatement(SQL);

@@ -1,0 +1,23 @@
+
+\
+java:S1118":Add a private constructor to hide the implicit public one.(‡ÛŸÚıÿÿÿÿ8¨Ä”Û1
+L	java:S106!"+Replace this use of System.out by a logger.(Ø¯ö­üÿÿÿÿ8ªÄ”Û1
+L	java:S106%"+Replace this use of System.out by a logger.(Š¢‚Åùÿÿÿÿ8ªÄ”Û1
+G	java:S106("+Replace this use of System.out by a logger.(®Á±8ªÄ”Û1
+F	java:S1062"+Replace this use of System.out by a logger.(Ü²µ8«Ä”Û1
+g
+java:S1128"ERemove this unused import 'jakarta.servlet.http.HttpServletResponse'.(ÂÓÕÇÿÿÿÿÿ8¸˜„„Û1
+\
+java:S1128	":Remove this unused import 'java.io.FileNotFoundException'.(·î™ùÿÿÿÿ8¸˜„„Û1
+M
+java:S1128"0Remove this unused import 'java.io.InputStream'.(¹»º8¸˜„„Û1
+S
+java:S1128"1Remove this unused import 'java.io.OutputStream'.(Ó ³ÿÿÿÿÿ8¸˜„„Û1
+V
+java:S1128"4Remove this unused import 'java.time.LocalDateTime'.(æÃ§ƒüÿÿÿÿ8¹ºƒ‚Û1
+\
+java:S1128"?Remove this unused import 'java.time.format.DateTimeFormatter'.(‰÷÷ª8¹ºƒ‚Û1
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ÉÛ„„Û1
+S
+java:S1128"1Remove this unused import 'java.util.Collection'.(¹ÉĞšùÿÿÿÿ8ÉÛ„„Û1

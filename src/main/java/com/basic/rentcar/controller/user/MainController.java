@@ -11,9 +11,9 @@ public class MainController implements Controller {
   @Override
   public String requestHandler(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     String center = request.getParameter("center");
-
+    String ctx = request.getContextPath();
     request.setAttribute("center", center);
-
+    request.setAttribute("ctx", ctx);
     return "main";
   }
 }

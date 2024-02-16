@@ -1,6 +1,7 @@
 package com.basic.rentcar.controller.rentcar;
 
 import com.basic.rentcar.dao.RentcarDao;
+import com.basic.rentcar.dao.ReservationDao;
 import com.basic.rentcar.fronController.Controller;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -15,9 +16,9 @@ public class DeleteResController implements Controller {
     int resSeq = Integer.parseInt(request.getParameter("resSeq"));
     int qty = Integer.parseInt(request.getParameter("qty"));
     int no = Integer.parseInt(request.getParameter("no"));
-    RentcarDao rdao = RentcarDao.getInstance();
+    ReservationDao dao = ReservationDao.getInstance();
     // 예약삭제 메소드 호출
-    rdao.carRemoveReserve(resSeq,qty,no);
+    dao.carRemoveReserve(resSeq,qty,no);
     String ctx = request.getContextPath();
     return "redirect:"+ctx+"/userReserveList.do";
   }

@@ -21,7 +21,7 @@
   </c:when>
   </c:choose>
 
-<form action="reservateCar.do?center=rentcar/reserveCarView.jsp"
+<form action="reservateCar.do"
       method="post">
   <table>
     <tr height="100">

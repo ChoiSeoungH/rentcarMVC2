@@ -24,8 +24,8 @@ public class HandlerMapping {
     mappings.put("/insertCar.do", new InsertCarController());
     mappings.put("/reservateCar.do", new ReservateCarController());
     mappings.put("/selectCarOption.do", new SelectCarOptionController());
-    mappings.put("/uploadCarImg.do", new UploadCarImgController());
     mappings.put("/userReserveList.do", new UserReserveListController());
+    mappings.put("/validateId.do", new ValidateIdController());
 
   }
 

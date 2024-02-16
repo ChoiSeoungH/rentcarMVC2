@@ -3,13 +3,7 @@
 <head>
   <title>Title</title>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="/script/join.js"></script>
-  <style>
-
-      body, ul, li {
-          margin: 0;
-      }
-  </style>
+  <script defer src="/script/join.js"></script>
 </head>
 <body>
 
@@ -21,7 +15,8 @@
           <td><h1>회원가입</h1></td>
         </tr>
         <tr>
-          <td>로그인 아이디 : <input placeholder="아이디를 입력해주세요." name="loginId" type="text"></td>
+          <td>로그인 아이디 : <input placeholder="아이디를 입력해주세요." name="loginId" id="id" type="text">
+            <input type="button" value="중복체크" id="checkId"></td>
         </tr>
         <tr>
           <td>로그인 패스워드 : <input placeholder="비밀번호를 입력해주세요." name="loginPw" type="password"></td>
@@ -48,12 +43,14 @@
           <td>자기소개 : <input value="반갑습니다" name="info" type="text"></td>
         </tr>
         <tr>
-          <td><div class="btn-group">
-            <button id="join" type="submit">회원가입</button>
-            <button type="button">
-              <a href="main.do">취소</a>
-            </button>
-          </div></td>
+          <td>
+            <div class="btn-group">
+              <button id="join" type="submit">회원가입</button>
+              <button type="button">
+                <a href="main.do">취소</a>
+              </button>
+            </div>
+          </td>
         </tr>
       </table>
     </form>
@@ -61,3 +58,45 @@
 </div>
 </body>
 </html>
+
+<script>
+  $("#checkId").click(function () {
+    let id = $("#id").val().trim();
+    console.log(id);
+    if (id.length === 0) {
+      alert("id 값을 입력해주세요");
+      $("#id").focus();
+      $("#id").css("border", "");
+      return;
+    }
+    $.ajax({
+      type: "POST",
+      url: "validateId.do",
+      data: { id: id },
+      success: function(data) {
+        if (data === "valid") {
+          alert("이 아이디는 사용가능 합니다  ");
+          $("#pw").focus();
+          $("#id").css("border", "3px blue solid");
+          check = 1;
+        } else if (data === "notValid") {
+          alert("이 아이디는 사용 불가능 합니다");
+          $("#id").val("");
+          $("#id").focus();
+          $("#id").css("border", "3px red solid");
+          check = -1;
+        }
+      },
+      error: function () {
+        alert("error");
+      }
+    });
+  });
+
+  $("#id").keyup(function (e) {
+    // if (e.keyCode === 8) {
+    check = 0;
+    // }
+    $("#id").css("border", "");
+  });
+</script>

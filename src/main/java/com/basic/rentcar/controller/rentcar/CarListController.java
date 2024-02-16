@@ -1,6 +1,5 @@
 package com.basic.rentcar.controller.rentcar;
 
-import _04_rentcar.RentcarVO;
 import com.basic.rentcar.dao.RentcarDao;
 import com.basic.rentcar.fronController.Controller;
 import com.basic.rentcar.vo.Rentcar;
@@ -38,7 +37,7 @@ public class CarListController implements Controller {
 
     request.setAttribute("temp", temp);
 
-    String center = request.getParameter("center");
+    String center = "rentcar/rentCarList.jsp";
     request.setAttribute("center", center);
     request.setAttribute("cartegoryList", cartegoryList);
     return "main";

@@ -1,6 +1,5 @@
 package com.basic.rentcar.controller.rentcar;
 
-import _04_rentcar.RentcarVO;
 import com.basic.rentcar.dao.RentcarDao;
 import com.basic.rentcar.fronController.Controller;
 import com.basic.rentcar.vo.Rentcar;
@@ -21,8 +20,7 @@ public class CarInfoController implements Controller {
     // 렌트카 하나에 대한 정보를 얻어옴
     Rentcar bean = rdao.getOneCar(no);
     request.setAttribute("bean", bean);
-    String center = request.getParameter("center");
-    request.setAttribute("center", center);
+
 
     int category = bean.getCategory();
     String temp = "";
@@ -34,6 +32,9 @@ public class CarInfoController implements Controller {
       temp = "대형";
 
     request.setAttribute("temp", temp);
+
+    String center = "rentcar/rentCarInfo.jsp";
+    request.setAttribute("center", center);
     return "main";
   }
 }

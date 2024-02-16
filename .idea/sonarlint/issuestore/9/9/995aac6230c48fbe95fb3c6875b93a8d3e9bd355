@@ -1,0 +1,8 @@
+
+^
+java:S1854 "ARemove this useless assignment to local variable "savedFileName".(Ú¶8ëÛ1
+V
+java:S1854$"9Remove this useless assignment to local variable "check".(íú—É8÷º€Û1
+G	java:S106"+Replace this use of System.out by a logger.(¥âÌ 8èœ¿ÿÚ1
+O
+java:S1481 "2Remove this unused "savedFileName" local variable.(Ú¶8íÛ1

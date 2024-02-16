@@ -1,3 +1,10 @@
 
+
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(±˜‰ü8úïƒÛ1
 µ
-java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(šŒÅF8¤ÒüÒÚ1
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(šŒÅF8¤ÒüÒÚ1
+X	java:S125$"<This block of commented-out lines of code should be removed.(ÁÏÿó8Œ‚ïƒÛ1
+G	java:S106("+Replace this use of System.out by a logger.(İŠ–é8Œ‚ïƒÛ1
+L	java:S106<"+Replace this use of System.out by a logger.(Ö¦û–ÿÿÿÿÿ8‚ïƒÛ1
+L	java:S106P"+Replace this use of System.out by a logger.(ĞéÚ¢üÿÿÿÿ8‚ïƒÛ1
+L	java:S106d"+Replace this use of System.out by a logger.(–¤¥âøÿÿÿÿ8Ûò‡„Û1

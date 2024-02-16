@@ -19,11 +19,11 @@ public class SelectCarOptionController implements Controller {
     String img = request.getParameter("img");
 
 
-    String center = request.getParameter("center");
-    request.setAttribute("center", center);
     request.setAttribute("no", no);
     request.setAttribute("qty", qty);
     request.setAttribute("img", img);
+    String center = "rentcar/carOption.jsp";
+    request.setAttribute("center", center);
     return "main";
   }
 }

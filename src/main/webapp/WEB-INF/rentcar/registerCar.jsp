@@ -1,7 +1,6 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page import="com.basic.rentcar.dao.RentcarDao" %>
 <%@ page import="com.basic.rentcar.vo.Rentcar" %>
-<%@ page import="_04_rentcar.RentcarVO" %>
 
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -21,7 +20,6 @@
 %>
 
 <div align="center">
-
 
   <table>
     <tr height="60">
@@ -61,8 +59,6 @@
   </form>
   <%-- button은 form 밖에 위치시키기 --%>
   <button onclick="location.href='main.do?center=carList.do'">전체 검색</button>
-
-
 </div>
 
 

@@ -45,12 +45,25 @@ function JoinForm_submit(form) {
     return;
   }
 
+  if (!form.email.value.match(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/)) {
+    alert("이메일 형식이 다릅니다");
+    form.email.focus();
+    return false;
+  }
+
   form.tel.value = form.tel.value.trim();
   if (form.tel.value.length == 0) {
     alert('전화번호를 입력해주세요.');
     form.tel.focus();
     return;
   }
+
+  if (!form.tel.value.match(/010-\d{3,4}-\d{4}/)) {
+    alert("전화번호 형식이 다릅니다");
+    form.tel.focus();
+    return false;
+  }
+
 
   form.hobby.value = form.hobby.value.trim();
   if (form.hobby.value.length == 0) {
