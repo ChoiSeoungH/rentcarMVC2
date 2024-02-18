@@ -1,11 +1,16 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
   <title>Insert title here</title>
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- DaisyUI CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@1.14.0/dist/full.css" rel="stylesheet">
 </head>
 <body>
 
@@ -20,49 +25,41 @@
 </c:choose>
 
 <div align="center">
-  <table>
-    <tr height="100">
-      <td align="center" colspan="11">
-        <font size="6" color="gray"> 차량 예약 완료 화면 </font>
-      </td>
+  <table class="table w-full">
+    <thead>
+    <tr>
+      <th>이미지</th>
+      <th>이름</th>
+      <th>대여일</th>
+      <th>대여기간</th>
+      <th>금액</th>
+      <th>수량</th>
+      <th>보험</th>
+      <th>wifi</th>
+      <th>베이비시트</th>
+      <th>네비게이션</th>
+      <th>삭제</th>
     </tr>
-  </table>
-  <table border="1">
-    <tr height="40">
-      <td width="150" align="center"> 이미지 </td>
-      <td width="150" align="center"> 이름 </td>
-      <td width="150" align="center"> 대여일 </td>
-      <td width="60" align="center"> 대여기간 </td>
-      <td width="100" align="center"> 금액 </td>
-      <td width="60" align="center"> 수량 </td>
-      <td width="60" align="center"> 보험 </td>
-      <td width="60" align="center"> wifi </td>
-      <td width="60" align="center"> 베이비시트 </td>
-      <td width="60" align="center"> 네비게이션 </td>
-      <td width="90" align="center"> 삭제 </td>
-    </tr>
+    </thead>
+    <tbody>
     <c:forEach var="vo" items="${reserveList}">
-      <tr height="70">
-        <td height="70" align="center">
-          <img src="img/${vo.img}"  width="120" height="70">
-        </td>
-        <td width="100" align="center">${vo.name}</td>
-        <td width="150" align="center">${vo.rday}</td>
-        <td width="150" align="center">${vo.dday}</td>
-        <td width="100" align="center">${vo.price} 원</td>
-        <td width="60" align="center">${vo.qty}</td>
-        <td width="100" align="center">${vo.usein}</td>
-        <td width="60" align="center">${vo.usewifi}</td>
-        <td width="60" align="center">${vo.useseat}</td>
-        <td width="60" align="center">${vo.usenavi}</td>
-        <td width="90" align="center">
-          <button onclick="location.href='deleteRes.do?resSeq=${vo.reserveSeq}&qty=${vo.qty}&no=${vo.no}&center=rentcar/userReserveList.jsp'">삭제</button>
+      <tr>
+        <td><img src="img/${vo.img}"  width="120" height="70"></td>
+        <td>${vo.name}</td>
+        <td>${vo.rday}</td>
+        <td>${vo.dday}</td>
+        <td>${vo.price} 원</td>
+        <td>${vo.qty}</td>
+        <td>${vo.usein}</td>
+        <td>${vo.usewifi}</td>
+        <td>${vo.useseat}</td>
+        <td>${vo.usenavi}</td>
+        <td>
+          <button onclick="location.href='deleteRes.do?resSeq=${vo.reserveSeq}&qty=${vo.qty}&no=${vo.no}&center=rentcar/userReserveList.jsp'" class="btn btn-outline btn-accent">삭제</button>
         </td>
       </tr>
     </c:forEach>
-
-
-
+    </tbody>
   </table>
 </div>
 </body>

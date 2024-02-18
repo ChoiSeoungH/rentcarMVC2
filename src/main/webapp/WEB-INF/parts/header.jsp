@@ -5,65 +5,47 @@
 <head>
   <meta charset="UTF-8">
   <title>Insert title here</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" type="text/css" href="${ctx}/css/style.css">
+
 </head>
 <body>
 
-<header>
-  <c:set var="id" value="${sessionScope.id}"/>
-  <c:choose>
-    <c:when test="${id eq null}">
-      <c:set var="id" value="GUEST"/>
-    </c:when>
-  </c:choose>
+<c:set var="id" value="${sessionScope.id}"/>
+<c:if test="${id eq null}">
+  <c:set var="id" value="GUEST"/>
+</c:if>
 
-  <table>
-    <tr height="70">
-      <td colspan="4">
-        <a href="main.do" style="text-decoration: none">
-          <img alt="" src="img/rent_logo.jpg" height="120">
-        </a>
-      </td>
-      <td align="center" width="200">
-        <c:choose>
-          <c:when test="${id eq 'GUEST'}">
-            ${id}님
-            <button onclick="location.href='main.do?center=user/login.jsp'">로그인</button>
-            <button onclick="location.href='main.do?center=user/join.jsp'">회원가입</button>
-          </c:when>
-          <c:when test="${id eq 'ADMIN'}">
-            <a href="userInfo.do"
-               style="text-decoration: none">${id}님</a></font>
-            <button onclick="location.href='logoutCheck.do'">로그아웃</button>
-            <button onclick="location.href='main.do?center=rentcar/carInsert.jsp'">차량등록</button>
-          </c:when>
-          <c:otherwise>
-            <a href="userInfo.do"
-               style="text-decoration: none">${id}님</a></font>
-            <button onclick="location.href='logoutCheck.do'">로그아웃</button>
-          </c:otherwise>
-        </c:choose>
-      </td>
-    </tr>
-    <tr height="50">
-      <td align="center" width="200" bgcolor="pink">
-        <font color="white" size="5"><a href="carMain.do?center=rentcar/carMain.jsp"
-                                        style="text-decoration: none">예약하기</a></font>
-      </td>
-      <td align="center" width="200" bgcolor="pink">
-        <font color="white" size="5"><a href="userReserveList.do"
-                                        style="text-decoration: none">예약확인</a></font>
-      </td>
-      <td align="center" width="200" bgcolor="pink">
-        <font color="white" size="5"><a href="#" style="text-decoration: none">자유게시판</a></font>
-      </td>
-      <td align="center" width="200" bgcolor="pink">
-        <font color="white" size="5"><a href="#" style="text-decoration: none">이벤트</a></font>
-      </td>
-      <td align="center" width="200" bgcolor="pink">
-        <font color="white" size="5"><a href="#" style="text-decoration: none">고객센터</a></font>
-      </td>
-    </tr>
-  </table>
-
+<header class="navbar bg-[#cfcfcf] border-b-2">
+  <div class="con mx-auto w-[1100px]">
+    <a href="main.do" style="text-decoration: none">
+      <img alt="Tailwind CSS Navbar component" src="img/logo.png" width="100px">
+    </a>
+    <nav class="menu-box-1">
+      <ul>
+        <li><a href="carMain.do?center=rentcar/carMain.jsp" >예약하기</a></li>
+        <li><a href="userReserveList.do" >예약확인</a></li>
+        <li><a href="main.do?center=rentcar/freeBoard.jsp" >자유게시판</a></li>
+        <li><a href="#" >이벤트</a></li>
+        <li><a href="#" >고객센터</a></li>
+        <c:if test="${id eq 'ADMIN'}">
+          <li><a href="main.do?center=rentcar/carInsert.jsp" >차량등록</a></li>
+        </c:if>
+      </ul>
+    </nav>
+    <div>
+      <c:choose>
+        <c:when test="${id eq 'GUEST'}">
+          ${id}님
+          <button onclick="location.href='main.do?center=user/login.jsp'">로그인</button>
+          <button onclick="location.href='main.do?center=user/join.jsp'">회원가입</button>
+        </c:when>
+        <c:otherwise>
+          <a href="userInfo.do" style="text-decoration: none">${id}님</a>
+          <button onclick="location.href='logoutCheck.do'">로그아웃</button>
+        </c:otherwise>
+      </c:choose>
+    </div>
+  </div>
 </header>

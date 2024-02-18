@@ -5,6 +5,31 @@
 <html>
 <head><title>FileUpload</title>
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <style>
+      .insertBox{
+          margin: auto;
+      }
+
+      .btnGroup > .btn-submit {
+          background-color : oklch(0.4912 0.3096 275.75) !important;
+      }
+
+      .btnGroup > .btn-submit:hover {
+          background-color : oklab(0.44208 0.0279164 -0.277238) !important;
+      }
+
+      .btnGroup > .btn-upload {
+          background-color : oklch(0.6971 0.329 342.55) !important;
+      }
+
+      .btnGroup > .btn-upload:hover {
+          background-color : oklab(0.62739 0.282473 -0.0887925) !important;
+      }
+      .body{
+          display: flex;
+          flex-direction: column;
+      }
+  </style>
 </head>
 <c:if test="${sessionScope.id ne 'ADMIN'}">
   <script type="text/javascript">
@@ -14,67 +39,31 @@
 </c:if>
 <body>
 
-<span style="color: red;">${errorMessage }</span>
+<span class="text-red-500">${errorMessage }</span>
 <form name="fileForm" method="post" action="insertCar.do" onsubmit="insertSubmit(this); return false;">
-  <table>
-    <tr>
-      <td>
-        <h3>차량 등록</h3>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        이름 : <input type="text" name="name"/>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        카테고리 : <select name="category">
+  <div class="insertBox p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
+    <div>
+      <h3 class="text-xl">차량 등록</h3>
+      <p class="text-gray-500">이름 : <input type="text" name="name" class="form-input mt-1 block w-full"/></p>
+      <p class="text-gray-500">카테고리 :
+        <select name="category" class="form-select mt-1 block w-full">
           <option value="소형">소형</option>
           <option value="중형">중형</option>
           <option value="대형">대형</option>
         </select>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        가격 : <input type="text" name="price"/>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        승차인원 : <input type="text" name="usepeople"/>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        총수량 : <input type="text" name="totalQty"/>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        차량 회사 정보 : <input type="text" name="company"/>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        이미지 : <input type="file" id="img" name="img" />
-      </td>
-    </tr>
-    <tr>
-      <td>
-        차량 정보 : <input type="text" name="info"/>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <input type="submit" id="submitBtn" value="전송하기"/>
-      </td>
-      <td>
-        <input type="button" id="imgBtn" value="이미지 업로드하기"/>
-      </td>
-    </tr>
-  </table>
+      </p>
+      <p class="text-gray-500">가격 : <input type="text" name="price" class="form-input bordered mt-1 block w-full"/></p>
+      <p class="text-gray-500">승차인원 : <input type="text" name="usepeople" class="form-input bordered mt-1 block w-full"/></p>
+      <p class="text-gray-500">총수량 : <input type="text" name="totalQty" class="form-input bordered mt-1 block w-full"/></p>
+      <p class="text-gray-500">차량 회사 정보 : <input type="text" name="company" class="form-input bordered mt-1 block w-full"/></p>
+      <p class="text-gray-500">이미지 : <input type="file" id="img" name="img" class="form-input bordered mt-1 block w-full"/></p>
+      <p class="text-gray-500">차량 정보 : <input type="text" name="info" class="form-input mt-1 bordered block w-full"/></p>
+      <div class="mt-4 btnGroup">
+        <input type="submit" id="submitBtn" value="전송하기" class="btn btn-primary btn-submit"/>
+        <input type="button" id="imgBtn" value="이미지 업로드하기" class="btn btn-secondary btn-upload ml-2"/>
+      </div>
+    </div>
+  </div>
 </form>
 </body>
 </html>

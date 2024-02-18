@@ -7,35 +7,51 @@
 <head>
   <meta charset="UTF-8">
   <title>Insert title here</title>
+  <!-- 슬릭 슬라이더 CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <!-- 슬릭 슬라이더 테마 CSS (선택 사항) -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  <style>
+      .slick-slider img {
+          width: 300px;
+          height: 200px;
+          object-fit: cover;
+      }
+      .slick-prev:before,
+      .slick-next:before {
+          color: black;
+      }
+  </style>
 </head>
 <body>
 <div align="center">
-  <table>
-    <tr height="60">
-      <td align="center" colspan="3"><font size="6" color="gray">${temp}
-        자동차</font></td>
-    </tr>
-
-    <c:forEach var="bean" items="${cartegoryList}" varStatus="status">
-      <c:if test="${status.index % 3 == 0}">
-        <tr height="220">
-      </c:if>
-
-      <td width="333" align="center">
+  <div class="slick-slider">
+    <c:forEach var="bean" items="${cartegoryList}">
+      <div>
         <a href="carInfo.do?no=${bean.no}&center=rentcar/rentCarInfo.jsp">
-          <img alt="" src="img/${bean.img}" width="300" height="200">
+          <img alt="" src="img/${bean.img}">
         </a>
         <p>
           <font size="3" color="gray"><b>차량명 | ${bean.name}</b></font>
         </p>
-      </td>
-
-      <c:if test="${(status.index + 1) % 3 == 0}">
-        </tr>
-      </c:if>
+      </div>
     </c:forEach>
-    </tr>
-  </table>
+  </div>
 </div>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- 슬릭 슬라이더 JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.slick-slider').slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      arrows: true
+    });
+  });
+</script>
 </body>
 </html>

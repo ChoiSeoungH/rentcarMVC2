@@ -6,29 +6,53 @@
 <head>
   <meta charset="UTF-8">
   <title>Insert title here</title>
+  <style>
+      .loginBox{
+          margin: auto;
+      }
 
+      .btnGroup > .btn-login {
+          background-color : oklch(0.4912 0.3096 275.75) !important;
+      }
+
+      .btnGroup > .btn-login:hover {
+          background-color : oklab(0.44208 0.0279164 -0.277238) !important;
+      }
+
+      .btnGroup > .btn-cancel {
+          background-color : oklch(0.6971 0.329 342.55) !important;
+      }
+
+      .btnGroup > .btn-cancel:hover {
+          background-color : oklab(0.62739 0.282473 -0.0887925) !important;
+      }
+      .body{
+          display: flex;
+          flex-direction: column;
+      }
+  </style>
 </head>
 <body>
-  <table border="1">
-    <tr height="100">
-      <td align="center" colspan="2">
-        <font size="6" color="gray"> 로그인 </font>
-      </td>
-    </tr>
-    <tr height="40">
-      <td width="120" align="center"> 아이디 </td>
-      <td width="180"> <input type="text" id="id" name="id" size="15" required/> </td>
-    </tr>
-    <tr height="40">
-      <td width="120" align="center"> 패스워드 </td>
-      <td width="180"> <input type="password" id="pw" name="pw" size="15" required /> </td>
-    </tr>
-    <tr height="40">
-      <td align="center" colspan="2">
-        <button id="login">로그인</button>
-      </td>
-    </tr>
-  </table>
+      <div class="loginBox flex flex-col w-[500px] h-[300px] p-[20px]">
+        <div class="head">
+          <div class="loginTitle text-center text-[2rem] font-bold">
+            로그인
+          </div>
+        </div>
+        <div class="body flex items-center justify-center flex-grow">
+            <div class="inputBox flex flex-col items-center gap-y-3">
+              <input placeholder="아이디" id="id" name="id" type="text" class="input input-bordered w-full" />
+              <input placeholder="비밀번호" id="pw" name="pw" type="password" class="input input-bordered w-full" />
+            </div>
+            <div class="btnGroup flex justify-center gap-x-3 mt-[5px]">
+              <button type="button" id="login" class="btn btn-primary btn-login !text-[15px]">로그인</button>
+              <button type="button" class="btn btn-secondary btn-cancel !text-[15px]">
+                <a href="main.do">취소</a>
+              </button>
+            </div>
+        </div>
+      </div>
+
 </body>
 </html>
 <script>

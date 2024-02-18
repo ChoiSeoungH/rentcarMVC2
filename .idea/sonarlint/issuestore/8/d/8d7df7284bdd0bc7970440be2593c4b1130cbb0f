@@ -1,7 +1,7 @@
 
-g	java:S1121"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8¹İ®„Û1
+g	java:S112/"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8òÌÆÙÛ1
 Y
-java:S1854="7Remove this useless assignment to local variable "id1".(½äí»ûÿÿÿÿ8Äİ®„Û1
-]	java:S1259"<This block of commented-out lines of code should be removed.(äÒàòÿÿÿÿÿ8Èİ®„Û1
+java:S18548"7Remove this useless assignment to local variable "id1".(½äí»ûÿÿÿÿ8ıÌÆÙÛ1
+L	java:S1063"+Replace this use of System.out by a logger.(µ°âùÿÿÿÿ8Ä†ÉÚÛ1
 J
-java:S1481="(Remove this unused "id1" local variable.(½äí»ûÿÿÿÿ8Éİ®„Û1
+java:S14818"(Remove this unused "id1" local variable.(½äí»ûÿÿÿÿ8ŒÍÆÙÛ1

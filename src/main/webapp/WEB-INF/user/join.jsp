@@ -4,58 +4,64 @@
   <title>Title</title>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script defer src="/script/join.js"></script>
+  <style>
+      .joinBox{
+          margin: auto;
+      }
+
+      .btnGroup > .btn-join {
+          background-color : oklch(0.4912 0.3096 275.75) !important;
+      }
+
+      .btnGroup > .btn-join:hover {
+          background-color : oklab(0.44208 0.0279164 -0.277238) !important;
+      }
+
+      .btnGroup > .btn-cancel {
+          background-color : oklch(0.6971 0.329 342.55) !important;
+      }
+
+      .btnGroup > .btn-cancel:hover {
+          background-color : oklab(0.62739 0.282473 -0.0887925) !important;
+      }
+      .body{
+          display: flex;
+          flex-direction: column;
+      }
+  </style>
 </head>
 <body>
-
-<div class="member_join_box">
-  <div class="con">
-    <form action="joinUser.do" method="POST" onsubmit="JoinForm_submit(this); return false;">
-      <table>
-        <tr>
-          <td><h1>회원가입</h1></td>
-        </tr>
-        <tr>
-          <td>로그인 아이디 : <input placeholder="아이디를 입력해주세요." name="loginId" id="id" type="text">
-            <input type="button" value="중복체크" id="checkId"></td>
-        </tr>
-        <tr>
-          <td>로그인 패스워드 : <input placeholder="비밀번호를 입력해주세요." name="loginPw" type="password"></td>
-        </tr>
-        <tr>
-          <td>로그인 패스워드 확인 : <input placeholder="비밀번호를 확인을 입력해주세요." name="loginPwConfirm" type="password"></td>
-        </tr>
-        <tr>
-          <td>이메일 : <input placeholder="이메일을 입력해주세요." name="email" type="email"></td>
-        </tr>
-        <tr>
-          <td>전화번호 : <input placeholder="전화번호를 입력해주세요." name="tel" type="tel"></td>
-        </tr>
-        <tr>
-          <td>취미 : <input placeholder="취미를 입력해주세요." name="hobby" type="text"></td>
-        </tr>
-        <tr>
-          <td>직업 : <input placeholder="직업을 입력해주세요." name="job" type="text"></td>
-        </tr>
-        <tr>
-          <td>나이 : <input placeholder="나이를 입력해주세요." name="age" type="text"></td>
-        </tr>
-        <tr>
-          <td>자기소개 : <input value="반갑습니다" name="info" type="text"></td>
-        </tr>
-        <tr>
-          <td>
-            <div class="btn-group">
-              <button id="join" type="submit">회원가입</button>
-              <button type="button">
-                <a href="main.do">취소</a>
-              </button>
-            </div>
-          </td>
-        </tr>
-      </table>
-    </form>
+<form action="joinUser.do" method="POST" onsubmit="JoinForm_submit(this); return false;">
+<div class="joinBox flex flex-col w-[500px] h-[800px] p-[20px]">
+  <div class="head">
+    <div class="loginTitle text-center text-[2rem] font-bold">
+      회원가입
+    </div>
+  </div>
+  <div class="body flex items-center justify-center flex-grow">
+    <div class="inputBox flex flex-col items-center gap-y-3">
+      <div class="flex gap-x-3">
+        <input placeholder="아이디" id="id" name="loginId" type="text" class="input input-bordered"/>
+        <button type="button" id="checkId">중복체크</button>
+      </div>
+      <input placeholder="비밀번호" name="loginPw" type="password" class="input input-bordered w-full"/>
+      <input placeholder="비밀번호 확인" type="password" name="loginPwConfirm" class="input input-bordered w-full"/>
+      <input placeholder="이메일" type="email" name="email" class="input input-bordered w-full"/>
+      <input placeholder="전화번호" type="tel" name="tel" class="input input-bordered w-full"/>
+      <input placeholder="취미" type="text" name="hobby" class="input input-bordered w-full"/>
+      <input placeholder="직업" type="text" name="job" class="input input-bordered w-full"/>
+      <input placeholder="나이" type="number" name="age" class="input input-bordered w-full"/>
+      <textarea placeholder="자기소개" type="text" name="info" class="input input-bordered w-full h-[150px]">반갑습니다</textarea>
+    </div>
+    <div class="btnGroup flex justify-center gap-x-3 mt-[5px]">
+      <button type="submit" id="login" class="btn btn-primary btn-join !text-[15px]">회원가입</button>
+      <button type="button" class="btn btn-secondary btn-cancel !text-[15px]">
+        <a href="main.do">취소</a>
+      </button>
+    </div>
   </div>
 </div>
+</form>
 </body>
 </html>
 

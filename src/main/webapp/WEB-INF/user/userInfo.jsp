@@ -4,61 +4,65 @@
 <head>
   <title>Title</title>
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <style>
+      .infoBox{
+          margin: auto;
+      }
+
+      .btnGroup > .btn-update {
+          background-color : oklch(0.4912 0.3096 275.75) !important;
+      }
+
+      .btnGroup > .btn-update:hover {
+          background-color : oklab(0.44208 0.0279164 -0.277238) !important;
+      }
+
+      .btnGroup > .btn-cancel {
+          background-color : oklch(0.6971 0.329 342.55) !important;
+      }
+
+      .btnGroup > .btn-cancel:hover {
+          background-color : oklab(0.62739 0.282473 -0.0887925) !important;
+      }
+      .body{
+          display: flex;
+          flex-direction: column;
+      }
+  </style>
 </head>
 <body>
-<form action="updateUser.do" method="post" onsubmit="userForm_submit(this); return false;">
+<form action="updateUser.do" method="POST" onsubmit="userForm_submit(this); return false;">
   <input type="hidden" name="no" value="${vo.no}"/>
-  <table>
-    <tr>
-      <td>번호</td>
-      <td class="left" >${vo.no}</td>
-    </tr>
-    <tr>
-      <td>아이디</td>
-      <td class="left" >${vo.id}</td>
-    </tr>
-    <tr>
-      <td>비밀번호</td>
-      <td><input class="col-12" type="text" id="pw" name="pw"/>
-        <input type="button" value="비밀번호체크" id="checkPw" data-id="${vo.id}"></td>
-    </tr>
-    <tr>
-      <td>비밀번호확인</td>
-      <td><input class="col-12" type="text" name="pwConfirm"/></td>
-    </tr>
-    <tr>
-      <td>이메일</td>
-      <td><input class="col-12" type="text" name="email" value="${vo.email}"/></td>
-    </tr>
-    <tr>
-      <td>전화번호</td>
-      <td><input class="col-12" type="text" name="tel" value="${vo.tel}"/></td>
-    </tr>
-    <tr>
-      <td>취미</td>
-      <td><input class="col-12" type="text" name="hobby" value="${vo.hobby}"/></td>
-    </tr>
-    <tr>
-      <td>직업</td>
-      <td><input class="col-12" type="text" name="job" value="${vo.job}"/></td>
-    </tr>
-    <tr>
-      <td>나이</td>
-      <td><input class="col-12" type="text" name="age" value="${vo.age}"/></td>
-    </tr>
-    <tr>
-      <td>자기소개</td>
-      <td><input class="col-12" type="text" name="info" value="${vo.info}"/></td>
-    </tr>
-    <tr>
-      <td colspan="2" align="center">
-        <input type="submit" id="submitBtn" value="수정하기" />
-      </td>
-      <td colspan="2" align="center">
-        <input type="button" id="delBtn" value="탈퇴하기" data-no="${vo.no}"/>
-      </td>
-    </tr>
-  </table>
+  <div class="infoBox flex flex-col w-[500px] h-[800px] p-[20px]">
+    <div class="head">
+      <div class="loginTitle text-center text-[2rem] font-bold">
+        회원정보 수정
+      </div>
+    </div>
+    <div class="body flex items-center justify-center flex-grow">
+      <div class="inputBox flex flex-col items-center gap-y-3">
+        <div class="w-full">번호 : ${vo.no}</div>
+        <div class="w-full">아이디 : ${vo.id}</div>
+        <div class="flex gap-x-3">
+          <input placeholder="비밀번호" id="pw" name="pw" type="password" class="input input-bordered"/>
+          <input type="button" value="비밀번호체크" id="checkPw" data-id="${vo.id}"></td>
+        </div>
+        <input placeholder="비밀번호 확인" type="password" name="loginPwConfirm" class="input input-bordered w-full"/>
+        <input placeholder="이메일" type="email" name="email" value="${vo.email}" class="input input-bordered w-full"/>
+        <input placeholder="전화번호" type="tel" name="tel" value="${vo.tel}" class="input input-bordered w-full"/>
+        <input placeholder="취미" type="text" name="hobby" value="${vo.hobby}" class="input input-bordered w-full"/>
+        <input placeholder="직업" type="text" name="job" value="${vo.job}" class="input input-bordered w-full"/>
+        <input placeholder="나이" type="number" name="age" value="${vo.age}" class="input input-bordered w-full"/>
+        <textarea placeholder="자기소개" type="text" name="info" class="input input-bordered w-full h-[150px]">${vo.info}</textarea>
+      </div>
+      <div class="btnGroup flex justify-center gap-x-3 mt-[5px]">
+        <button type="submit" id="submitBtn" class="btn btn-primary btn-update !text-[15px]">수정하기</button>
+        <button type="button" class="btn btn-secondary btn-cancel !text-[15px]">
+          <a href="main.do">취소</a>
+        </button>
+      </div>
+    </div>
+  </div>
 </form>
 </body>
 </html>

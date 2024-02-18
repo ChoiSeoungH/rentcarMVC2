@@ -2,44 +2,45 @@ create database rentcarDB01;
 USE rentcarDB01;
 -- rentcar 테이블 생성
 
-drop table member;
+-- drop table member;
 CREATE TABLE rentcar(
-	no INT auto_increment primary key, -- 렌트카 고유 번호 
-    name VARCHAR(20), -- 차량 이름
-    category INT, -- 차량 종류 
-    price INT, -- 렌트 가격
-    usepeople INT, -- 승차 인원
-	total_qty int, -- 렌트카 총 수량 
-    company VARCHAR(50), -- 차량 회사 정보
-    img VARCHAR(50), -- 차량 이미지 
-    info VARCHAR(500) -- 차량 정보 
+                        no INT auto_increment primary key, -- 렌트카 고유 번호
+                        name VARCHAR(20), -- 차량 이름
+                        category INT, -- 차량 종류
+                        price INT, -- 렌트 가격
+                        usepeople INT, -- 승차 인원
+                        total_qty int, -- 렌트카 총 수량
+                        company VARCHAR(50), -- 차량 회사 정보
+                        img VARCHAR(50), -- 차량 이미지
+                        info VARCHAR(500) -- 차량 정보
 );
 -- member 테이블 생성
 CREATE TABLE member(
-	no INT auto_increment primary key, -- 고객 정보
-	id VARCHAR(20), 
-    pw VARCHAR(20), 
-    email VARCHAR(50), 
-    tel VARCHAR(20),
-    hobby VARCHAR(60),
-    job VARCHAR(15),
-    age VARCHAR(10),
-    info VARCHAR(500)
+                       no INT auto_increment primary key, -- 고객 정보
+                       id VARCHAR(20),
+                       pw VARCHAR(20),
+                       email VARCHAR(50),
+                       tel VARCHAR(20),
+                       hobby VARCHAR(60),
+                       job VARCHAR(15),
+                       age VARCHAR(10),
+                       info VARCHAR(500)
 );
 
 CREATE TABLE carreserve(
-	reserve_seq INT auto_increment primary key,  -- 차량 예약 정보 번호
-    no INT, -- 렌트카 고유 번호 
-    id VARCHAR(50), -- 고객 id 
-    qty INT, -- 렌트한 수량 
-    dday INT, -- 대여기간
-    rday VARCHAR(50), -- 대여일 
-    usein INT, -- 운전자 보험여부
-    usewifi INT, -- 인터넷 여부 
-    usenavi INT, -- 네비게이션 대여 여부 
-    useseat INT -- 베이비시트 적용 
+                           reserve_seq INT auto_increment primary key,  -- 차량 예약 정보 번호
+                           no INT, -- 렌트카 고유 번호
+                           id VARCHAR(50), -- 고객 id
+                           qty INT, -- 렌트한 수량
+                           dday INT, -- 대여기간
+                           rday VARCHAR(50), -- 대여일
+                           usein INT, -- 운전자 보험여부
+                           usewifi INT, -- 인터넷 여부
+                           usenavi INT, -- 네비게이션 대여 여부
+                           useseat INT -- 베이비시트 적용
 );
 
+INSERT INTO member VALUES (null,'ADMIN', '1234', 'test@test.com', '010-2343-2444', '스포츠', '개발자', 31, '반갑습니다');
 INSERT INTO member VALUES (null,'qwer', '1234', 'qwer@naver.com', '010-2343-2444', '스포츠', '개발자', 31, '반갑습니다');
 INSERT INTO member VALUES (null, 'asdf', '1234', 'qwer@naver.com', '010-2343-2444', '스포츠', '개발자', 31, '반갑습니다');
 select * from member;
