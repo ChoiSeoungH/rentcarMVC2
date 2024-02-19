@@ -75,20 +75,20 @@ public class ReservateCarController implements Controller {
     request.setAttribute("compare",compare);
 
 
-    ReservationResult result = new ReservationResult();
-    result.setTotalCar(totalCar);
-    result.setTotalOption(totalOption);
-    result.setTotalAmount(totalCar + totalOption);
+    ReservationResult result = new ReservationResult(); // ReservationResult 객체 생성
 
-    response.getWriter().write(new Gson().toJson(result));
+    result.setTotalCar(totalCar); // ReservationResult 객체에 총 자동차 수 설정
+    result.setTotalOption(totalOption); // ReservationResult 객체에 총 옵션 수 설정
+    result.setTotalAmount(totalCar + totalOption); // 총 금액 계산하여 ReservationResult 객체에 설정
+
+    response.getWriter().write(new Gson().toJson(result)); // ReservationResult 객체를 JSON으로 변환하여 응답에 기록
 
     return null;
   }
-}
-@Data
-class ReservationResult {
-  private int totalCar;
-  private int totalOption;
-  private int totalAmount;
-
+  @Data
+   class ReservationResult {
+    private int totalCar;
+    private int totalOption;
+    private int totalAmount;
+  }
 }
